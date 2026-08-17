@@ -1,4 +1,4 @@
-package com.Ecommerce.ecomm_springboot.DTO;
+package com.Ecommerce.ecomm_springboot.Payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +11,9 @@ import java.util.List;
 @NoArgsConstructor
 public class CategoryResponse {
     private List<CategoryDTO> content;
-
-    
+    private Integer pageNumber;
+    private Integer pageSize;
+    private Long totalElements;
+    private Integer totalPages;
+    private boolean lastPage;
 }

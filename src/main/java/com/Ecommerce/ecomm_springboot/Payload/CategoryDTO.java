@@ -1,4 +1,4 @@
-package com.Ecommerce.ecomm_springboot.DTO;
+package com.Ecommerce.ecomm_springboot.Payload;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

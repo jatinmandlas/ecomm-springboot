@@ -1,5 +1,6 @@
 package com.Ecommerce.ecomm_springboot.exceptions;
 
+import com.Ecommerce.ecomm_springboot.Payload.APIResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
