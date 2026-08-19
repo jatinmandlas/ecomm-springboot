@@ -14,15 +14,17 @@ import java.io.IOException;
 public interface ProductService {
     ProductDTO addProduct(ProductDTO productDTO, Long categoryId);
 
-    ProductResponse getAllProducts();
 
-    ProductResponse getAllProductsByCategory(Long categoryId);
 
-    ProductResponse getProductsByKeyword(String keyword);
+    ProductResponse getAllProductsByCategory(Long categoryId,Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
+
+    ProductResponse getProductsByKeyword(String keyword,Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
     ProductDTO updateProduct(Long productId, @Valid ProductDTO productDTO);
 
     ProductDTO deleteProduct(Long productId);
 
     ProductDTO updateProductImage(Long productId, MultipartFile image) throws IOException;
+
+    ProductResponse getAllProducts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 }
