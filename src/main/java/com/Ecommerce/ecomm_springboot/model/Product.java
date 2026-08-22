@@ -24,7 +24,7 @@ public class Product {
 
     private String productName;
     @NotBlank
-    @Size(min=6,message="discription should be atleast of 6 size")
+    @Size(min=6,message="description should be atleast of 6 size")
     private String Description;
     private String image;
     private Integer quantity;
@@ -35,4 +35,7 @@ public class Product {
     @ManyToOne
     @JoinColumn(name="category_id")
     private Category category;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

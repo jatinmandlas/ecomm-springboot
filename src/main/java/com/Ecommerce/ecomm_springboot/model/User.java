@@ -25,9 +25,9 @@ public class User {
     @Column(name="user_id")
     private Long userId;
     @NotBlank
-    @Size(max = 20)
+    @Size(max = 50)
     @Column(name="username")
-    private String userName;
+    private String username;
     @NotBlank
     @Size(max = 120)
     private String password;
@@ -37,10 +37,10 @@ public class User {
     @Column(name="email")
     private String email;
 
-    public User(String email, String password, String userName) {
+    public User(String username, String email, String password) {
+        this.username = username;
         this.email = email;
         this.password = password;
-        this.userName = userName;
     }
 
 
@@ -53,7 +53,7 @@ public class User {
     )
     @Getter
     @Setter
-    private Set<Roles> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
     @ManyToMany(cascade =  {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name="user_addresses",
@@ -64,7 +64,7 @@ public class User {
     @Setter
     @ToString.Exclude
     @OneToMany(mappedBy ="user",cascade = {CascadeType.MERGE,CascadeType.PERSIST},orphanRemoval = true)
-    private Set<Product> products;
+    private Set<Product> products=new HashSet<>();
 
 
 
