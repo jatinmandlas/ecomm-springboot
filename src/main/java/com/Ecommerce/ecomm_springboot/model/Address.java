@@ -32,9 +32,10 @@ public class Address {
      private String country;
     @NotBlank
      private String pincode;
-    @ToString.Exclude
-    @ManyToMany(mappedBy = "addresses")
-    List<User> users=new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 
     public Address( String buildingName, String city, String country, String pincode, String state, String street) {
 
