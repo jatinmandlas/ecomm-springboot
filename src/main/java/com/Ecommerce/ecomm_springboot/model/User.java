@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.hibernate.engine.internal.Cascade;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -65,6 +66,11 @@ public class User {
     @ToString.Exclude
     @OneToMany(mappedBy ="user",cascade = {CascadeType.MERGE,CascadeType.PERSIST},orphanRemoval = true)
     private Set<Product> products=new HashSet<>();
+
+    @ToString.Exclude
+    @OneToOne(mappedBy = "user", cascade={CascadeType.MERGE,CascadeType.PERSIST})
+    private Cart cart;
+
 
 
 
