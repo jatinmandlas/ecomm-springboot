@@ -40,12 +40,12 @@ src/
 
 Create a `.env` file or configure the following environment variables:
 
-DB_URL=
-DB_USERNAME=
-DB_PASSWORD=
-JWT_SECRET=
-JWT_EXPIRATION_MS=
-JWT_COOKIE_NAME=
+DB_URL,
+DB_USERNAME,
+DB_PASSWORD,
+JWT_SECRET,
+JWT_EXPIRATION_MS,
+JWT_COOKIE_NAME,
 
 ## Running Locally
 
